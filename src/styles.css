@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'MyFont';
+  src: url('/assets/fonts/Bamf-2vWPl.otf') format('truetype');
+}
+
+body {
+  font-family: 'MyFont2', sans-serif;
+}

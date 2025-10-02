@@ -1,0 +1,53 @@
+<div class="row row-cols-2 row-cols-md-5 g-3" m-50  px-4>
+
+    
+    @for(item of list_of_movies ; track $index){
+    <div class="col">
+        <div class="card h-100 position-relative">
+            <img [src]="'https://image.tmdb.org/t/p/w500/'+item.poster_path" class="card-img-top" alt={{item.id}}>
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{item.release_date}}</p>
+                @if(item.popularity < 306.2){
+                  <span class="ribbon">★ Top Rated</span>
+                }@else{
+                  <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill">
+                        {{item.popularity.toFixed(1)}}
+                  </span>
+                }
+            </div>
+        </div>
+    </div>
+    }@empty {
+      <h1>No Movie Founded!</h1>
+    }
+</div>    
+
+
+  <!-- <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div> -->
+  <!-- </div> -->

@@ -1,0 +1,61 @@
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" [(ngModel)] = "searchval">
+  <h3>{{searchval}}</h3>
+  <label for="floatingInput">Email address</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+  <label for="floatingPassword">Password</label>
+</div>
+
+<div class="container py-5">
+  <h2 class="mb-4 text-center">Product List</h2>
+
+  <div class="row g-3">
+    <!-- Product 1 -->
+    <div class="col-md-2">
+        <div class="card h-100 shadow-sm">
+            <!-- <img src="https://m.media-amazon.com/images/I/619GbzAAOhL.__AC_SX300_SY300_QL70_ML2_.jpg"> -->
+            <!-- <img src={{myproduct.image}}> -->
+            <img [src]="list_of_products[0].image"> 
+
+            <div class="card-body text-center">
+            <h5 class="card-title">{{list_of_products[0].title}}</h5>
+            <p class="card-text text-muted">{{list_of_products[0].category}}</p>
+            <p class="fw-bold text-success">{{list_of_products[0].description}}</p>
+            <button class="btn btn-succses" [disabled] = "!myproduct.avilable" (click)="addcard(list_of_products[0].title)">Add To Cart</button>
+            <button class="btn btn-info" [disabled] = "!myproduct.avilable" >Add To Favorite ❤️</button>
+            </div>
+        </div>
+    </div>
+    <!-- Product 1 -->
+    <div class="col-md-2">
+        <div class="card h-100 shadow-sm">
+            <!-- <img src="https://m.media-amazon.com/images/I/619GbzAAOhL.__AC_SX300_SY300_QL70_ML2_.jpg"> -->
+            <!-- <img src={{myproduct.image}}> -->
+            <img [src]="list_of_products[1].image"> 
+
+            <div class="card-body text-center">
+            <h5 class="card-title">{{list_of_products[1].title}}</h5>
+            <p class="card-text text-muted">{{list_of_products[1].category}}</p>
+            <p class="fw-bold text-success">{{list_of_products[1].description}}</p>
+            <button class="btn btn-succses" [disabled] = "!myproduct.avilable" >Add To Cart</button>
+            <button class="btn btn-info" [disabled] = "!myproduct.avilable" >Add To Favorite ❤️</button>
+            </div>
+        </div>
+    </div>
+    <!-- Product 3 -->
+    <div class="col-md-2">
+      <div class="card h-100 shadow-sm">
+        <!-- Add similar structure for Product 2 without img tag -->
+         <img [src]="list_of_products[2].image"> 
+
+            <div class="card-body text-center">
+            <h5 class="card-title">{{list_of_products[2].title}}</h5>
+            <p class="card-text text-muted">{{list_of_products[2].category}}</p>
+            <p class="fw-bold text-success">{{list_of_products[2].description}}</p>
+            <button class="btn btn-succses" [disabled] = "!myproduct.avilable" >Add To Cart</button>
+            <button class="btn btn-info" [disabled] = "!myproduct.avilable" >Add To Favorite ❤️</button>
+      </div>
+  </div>
+</div>
